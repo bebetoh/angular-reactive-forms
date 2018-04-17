@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -10,5 +10,13 @@ import { FormControl } from '@angular/forms';
 export class HeroDetailComponent {
 
   name = new FormControl();
+
+}
+
+class HeroDetailComponent2 {
+
+  heroForm = new FormGroup({
+    name: new FormControl()
+  });
 
 }
