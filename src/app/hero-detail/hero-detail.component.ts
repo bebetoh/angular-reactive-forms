@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
@@ -9,12 +9,16 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./hero-detail.component.css']
 })
 
-export class HeroDetailComponent1 {
+export class HeroDetailComponent3 {
+  heroForm: FormGroup; // <--- heroForm is of type FormGroup
 
- // name = new FormControl();
-  heroForm = new FormGroup({
-    name: new FormControl()
-  });
+  constructor(private fb: FormBuilder) { // <--- inject FormBuilder
+    this.createForm();
+  }
 
+  createForm() {
+    this.heroForm = this.fb.group({
+      name: '', // <--- the FormControl called "name"
+    });
+  }
 }
-
