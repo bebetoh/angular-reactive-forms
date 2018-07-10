@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -18,7 +18,7 @@ export class HeroDetailComponent3 {
 
   createForm() {
     this.heroForm = this.fb.group({
-      name: '', // <--- the FormControl called "name"
+      name: ['', Validators.required], // <--- the FormControl called "name"
     });
   }
 }
